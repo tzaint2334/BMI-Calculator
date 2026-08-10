@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMI Calculator | Premium</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+    <div class="background">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="glow glow-three"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="app-container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <div>
+                    <h1>Zain BMI Calculator</h1>
+                    <p>Health & Wellness</p>
+                </div>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                <span>Healthy Living</span>
+            </div>
+
+        </header>
+
+
+        <!-- Calculator Card -->
+        <section class="calculator-card">
+
+            <!-- Intro -->
+            <div class="intro">
+                <span class="intro-badge">
+                    <i class="fa-solid fa-sparkles"></i>
+                    Smart Calculator
+                </span>
+
+                <h2>Know your <span>body</span> better.</h2>
+
+                <p>
+                    Enter your height and weight to calculate your
+                    Body Mass Index instantly.
+                </p>
+            </div>
+
+
+            <!-- Input Section -->
+            <div class="input-grid">
+
+                <!-- Height -->
+                <div class="input-group">
+
+                    <label for="height">
+                        <span class="label-icon">
+                            <i class="fa-solid fa-ruler-vertical"></i>
+                        </span>
+
+                        Height
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <input
+                            type="number"
+                            id="height"
+                            placeholder="Enter height"
+                            min="1"
+                            max="300"
+                        >
+
+                        <span>cm</span>
+
+                    </div>
+
+                    <small id="height-error"></small>
+
+                </div>
+
+
+                <!-- Weight -->
+                <div class="input-group">
+
+                    <label for="weight">
+                        <span class="label-icon">
+                            <i class="fa-solid fa-weight-scale"></i>
+                        </span>
+
+                        Weight
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <input
+                            type="number"
+                            id="weight"
+                            placeholder="Enter weight"
+                            min="1"
+                            max="500"
+                        >
+
+                        <span>kg</span>
+
+                    </div>
+
+                    <small id="weight-error"></small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Calculate Button -->
+            <button class="calculate-btn" id="calculateBtn">
+
+                <span>
+                    <i class="fa-solid fa-calculator"></i>
+                    Calculate BMI
+                </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+            <!-- Result Section -->
+            <div class="result-section" id="resultSection">
+
+                <div class="result-header">
+
+                    <div>
+                        <p class="result-label">YOUR BMI</p>
+                        <h3 id="bmiValue">--</h3>
+                    </div>
+
+                    <div class="result-icon" id="resultIcon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                </div>
+
+
+                <!-- Category -->
+                <div class="category-box">
+
+                    <div>
+                        <span class="category-label">
+                            BMI Category
+                        </span>
+
+                        <strong id="bmiCategory">
+                            Enter your details
+                        </strong>
+                    </div>
+
+                    <div class="category-status" id="categoryStatus">
+                        <i class="fa-solid fa-minus"></i>
+                    </div>
+
+                </div>
+
+
+                <!-- BMI Scale -->
+                <div class="bmi-scale">
+
+                    <div class="scale-labels">
+                        <span>Underweight</span>
+                        <span>Normal</span>
+                        <span>Overweight</span>
+                        <span>Obese</span>
+                    </div>
+
+                    <div class="scale-bar">
+
+                        <div class="scale-progress" id="scaleProgress"></div>
+
+                        <div class="scale-marker" id="scaleMarker"></div>
+
+                    </div>
+
+                    <div class="scale-values">
+                        <span>&lt; 18.5</span>
+                        <span>18.5 - 24.9</span>
+                        <span>25 - 29.9</span>
+                        <span>30+</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Message -->
+                <div class="result-message">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <p id="resultMessage">
+                        Enter your height and weight to see your BMI result.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Reset -->
+            <button class="reset-btn" id="resetBtn">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset Calculator
+            </button>
+
+        </section>
+
+
+        <!-- BMI Information -->
+        <section class="info-section">
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </div>
+
+                <div>
+                    <h3>What is BMI?</h3>
+
+                    <p>
+                        Body Mass Index is a simple measurement that
+                        uses your height and weight to estimate whether
+                        your weight falls within a healthy range.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <div>
+                    <h3>Health Reminder</h3>
+
+                    <p>
+                        BMI is only a general indicator and does not
+                        measure overall health or body composition.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                <i class="fa-regular fa-heart"></i>
+                Built with HTML, CSS & JavaScript
+            </p>
+
+            <span>Task 6 • SpireX Foundation</span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="index.js"></script>
+
+</body>
+</html>
